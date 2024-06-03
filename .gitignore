@@ -5,7 +5,6 @@ node_modules/
 *.log
 
 # Ignore large media files
-*.gif
 *.mp4
 *.mov
 
