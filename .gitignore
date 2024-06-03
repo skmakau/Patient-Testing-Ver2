@@ -1,0 +1,17 @@
+# Ignore node modules
+node_modules/
+
+# Ignore log files
+*.log
+
+# Ignore large media files
+*.gif
+*.mp4
+*.mov
+
+# Ignore MacOS system files
+.DS_Store
+
+# Ignore other unnecessary files
+*.zip
+dist/
