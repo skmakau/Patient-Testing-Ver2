@@ -1,5 +1,3 @@
-window.googleDocCallback = function () { return true; };
-
 document.getElementById('surveyForm').addEventListener('submit', function(event) {
     event.preventDefault();
     const formData = new FormData(this);
@@ -26,7 +24,7 @@ document.getElementById('surveyForm').addEventListener('submit', function(event)
             alert('Thank you for your ratings!');
             window.close();
         } else {
-            throw new Error('Submission failed');
+            throw new Error('Submission failed: ' + data.message);
         }
     })
     .catch((error) => {
@@ -35,13 +33,3 @@ document.getElementById('surveyForm').addEventListener('submit', function(event)
     });
 });
 
-function fetchData() {
-    const scriptUrl = 'https://script.google.com/macros/s/AKfycbyPrvPOfwSpiHGsCQWNPeWd6U86005LXJKTVdQiaAHezXKLRPDmkXcvm27Aed1fNAue/exec';
-    const url = scriptUrl + '?callback=googleDocCallback';
-    
-    const script = document.createElement('script');
-    script.src = url;
-    document.body.appendChild(script);
-}
-
-fetchData();
