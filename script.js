@@ -9,7 +9,7 @@ document.getElementById('surveyForm').addEventListener('submit', function(event)
     fetch('https://script.google.com/macros/s/AKfycbyPrvPOfwSpiHGsCQWNPeWd6U86005LXJKTVdQiaAHezXKLRPDmkXcvm27Aed1fNAue/exec', {
         method: 'POST',
         headers: {
-            'Content-Type': 'text/plain',
+            'Content-Type': 'application/json',
         },
         body: JSON.stringify(data),
     })
@@ -17,10 +17,10 @@ document.getElementById('surveyForm').addEventListener('submit', function(event)
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
-        return response.text();
+        return response.json();
     })
     .then(data => {
-        if (data.includes('success')) {
+        if (data.status === 'success') {
             alert('Thank you for your ratings!');
             window.close();
         } else {
