@@ -122,8 +122,7 @@
 
         <button type="submit" class="submit-btn">Submit Ratings</button>
     </form>
-
-    <script>
+<script>
         document.getElementById('surveyForm').addEventListener('submit', function(event) {
             event.preventDefault();
             const formData = new FormData(this);
@@ -132,7 +131,7 @@
                 data[key] = value;
             });
 
-            fetch('https://script.google.com/macros/s/AKfycbwDmaa4puwKnMlzbCaJ_FJljrvKas2LD1Cbn2vfMCyBHtnc2Z8HgQeKIZHrIK-zJLKh/exec', {
+            fetch('https://script.google.com/macros/s/AKfycbyqdQ-7bxPWePtOrK1rVW3Rp2r0vpF_HmAFd9phUuXdRr6uV-Kl1hNLbJVYAI5cMzQ/exec', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -150,7 +149,7 @@
                     alert('Thank you for your ratings!');
                     window.close();
                 } else {
-                    throw new Error('Submission failed');
+                    throw new Error('Submission failed: ' + data.message);
                 }
             })
             .catch((error) => {
