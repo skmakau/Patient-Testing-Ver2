@@ -6,7 +6,7 @@ document.getElementById('surveyForm').addEventListener('submit', function(event)
         data[key] = value;
     });
 
-    fetch('https://script.google.com/macros/s/AKfycbyPrvPOfwSpiHGsCQWNPeWd6U86005LXJKTVdQiaAHezXKLRPDmkXcvm27Aed1fNAue/exec', {
+    fetch('https://script.google.com/macros/s/AKfycbwezsYUcqOFcEhQnnvQOPTHtHvILmpyoaPZmT5ViTXXziTpkJvXCrXiQA9c539Wcm9W/exec', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
