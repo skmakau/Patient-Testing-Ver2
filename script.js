@@ -14,17 +14,18 @@ document.getElementById('surveyForm').addEventListener('submit', function(event)
         body: JSON.stringify(data),
     })
     .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        return response.text();
+        return response.json().then(data => ({
+            status: response.status,
+            statusText: response.statusText,
+            data
+        }));
     })
-    .then(data => {
-        if (data.includes('success')) {
+    .then(result => {
+        if (result.status === 200 && result.data.status === 'success') {
             alert('Thank you for your ratings!');
             window.close();
         } else {
-            throw new Error('Submission failed');
+            throw new Error('Submission failed: ' + result.data.message);
         }
     })
     .catch((error) => {
@@ -32,5 +33,6 @@ document.getElementById('surveyForm').addEventListener('submit', function(event)
         alert('There was an error submitting your ratings. Please try again.');
     });
 });
+
 
 
