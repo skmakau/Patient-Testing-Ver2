@@ -134,14 +134,23 @@
             fetch('https://script.google.com/macros/s/AKfycbwDmaa4puwKnMlzbCaJ_FJljrvKas2LD1Cbn2vfMCyBHtnc2Z8HgQeKIZHrIK-zJLKh/exec', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'text/plain',
+                    'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(data),
             })
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
             .then(data => {
-                alert('Thank you for your ratings!');
-                window.close(); // Close the window after submission
+                if (data.status === 'success') {
+                    alert('Thank you for your ratings!');
+                    window.close();
+                } else {
+                    throw new Error('Submission failed');
+                }
             })
             .catch((error) => {
                 console.error('Error:', error);
