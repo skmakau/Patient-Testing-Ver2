@@ -10,7 +10,19 @@
 <body>
     <div class="container">
         <img src="path/to/logo.png" alt="Logo" class="logo" loading="lazy">
-        <h1>Steadi-Three Patient Evaluation</h1>
+        <h1>Video Rating Survey</h1>
+        <button onclick="toggleLegend()">Show/Hide Fahn-Tolosa-Marin Scale</button>
+        <div class="legend" id="legend">
+            <h3>Fahn-Tolosa-Marin Scale</h3>
+            <ul>
+                <li>0: No tremor</li>
+                <li>1: Slight tremor</li>
+                <li>2: Mild tremor</li>
+                <li>3: Moderate tremor</li>
+                <li>4: Severe tremor</li>
+                <!-- Add more scale details as needed -->
+            </ul>
+        </div>
         <form id="surveyForm">
             <div>
                 <label for="name">Your Name:</label>
@@ -18,103 +30,155 @@
             </div>
         <!-- Patient 1 -->
         <div class="video-group">
-            <h2>Patient 1</h2>
+            <h2>REST</h2>
             <div class="video-group-row">
                 <div class="video-section">
                     <img src="Donna_Pour_FH.gif" alt="Patient 1 Video 1" class="video-gif">
                     <div class="rating-scale">
-                        <input type="radio" id="video1-1-1" name="video1_1" value="1">
-                        <label for="video1-1-1">1</label>
-                        <input type="radio" id="video1-1-2" name="video1_1" value="2">
-                        <label for="video1-1-2">2</label>
-                        <input type="radio" id="video1-1-3" name="video1_1" value="3">
-                        <label for="video1-1-3">3</label>
-                        <input type="radio" id="video1-1-4" name="video1_1" value="4">
-                        <label for="video1-1-4">4</label>
-                        <input type="radio" id="video1-1-5" name="video1_1" value="5">
-                        <label for="video1-1-5">5</label>
+                        <input type="radio" id="video1-1-1" name="video1_1" value="0">
+                        <label for="video1-1-1">0</label>
+                        <input type="radio" id="video1-1-2" name="video1_1" value="1">
+                        <label for="video1-1-2">1</label>
+                        <input type="radio" id="video1-1-3" name="video1_1" value="2">
+                        <label for="video1-1-3">2</label>
+                        <input type="radio" id="video1-1-4" name="video1_1" value="3">
+                        <label for="video1-1-4">3</label>
+                        <input type="radio" id="video1-1-5" name="video1_1" value="4">
+                        <label for="video1-1-5">4</label>
                     </div>
                 </div>
                 <div class="video-section">
                     <img src="Donna_Pour_FH.gif" alt="Patient 1 Video 2" class="video-gif">
                     <div class="rating-scale">
-                        <input type="radio" id="video1-2-1" name="video1_2" value="1">
-                        <label for="video1-2-1">1</label>
-                        <input type="radio" id="video1-2-2" name="video1_2" value="2">
-                        <label for="video1-2-2">2</label>
-                        <input type="radio" id="video1-2-3" name="video1_2" value="3">
-                        <label for="video1-2-3">3</label>
-                        <input type="radio" id="video1-2-4" name="video1_2" value="4">
-                        <label for="video1-2-4">4</label>
-                        <input type="radio" id="video1-2-5" name="video1_2" value="5">
-                        <label for="video1-2-5">5</label>
+                        <input type="radio" id="video1-2-1" name="video1_2" value="0">
+                        <label for="video1-2-1">0</label>
+                        <input type="radio" id="video1-2-2" name="video1_2" value="1">
+                        <label for="video1-2-2">1</label>
+                        <input type="radio" id="video1-2-3" name="video1_2" value="2">
+                        <label for="video1-2-3">2</label>
+                        <input type="radio" id="video1-2-4" name="video1_2" value="3">
+                        <label for="video1-2-4">3</label>
+                        <input type="radio" id="video1-2-5" name="video1_2" value="4">
+                        <label for="video1-2-5">4</label>
                     </div>
                 </div>
                 <div class="video-section">
                     <img src="Donna_Pour_FH.gif" alt="Patient 1 Video 3" class="video-gif">
                     <div class="rating-scale">
-                        <input type="radio" id="video1-3-1" name="video1_3" value="1">
-                        <label for="video1-3-1">1</label>
-                        <input type="radio" id="video1-3-2" name="video1_3" value="2">
-                        <label for="video1-3-2">2</label>
-                        <input type="radio" id="video1-3-3" name="video1_3" value="3">
-                        <label for="video1-3-3">3</label>
-                        <input type="radio" id="video1-3-4" name="video1_3" value="4">
-                        <label for="video1-3-4">4</label>
-                        <input type="radio" id="video1-3-5" name="video1_3" value="5">
-                        <label for="video1-3-5">5</label>
+                        <input type="radio" id="video1-3-1" name="video1_3" value="0">
+                        <label for="video1-3-1">0</label>
+                        <input type="radio" id="video1-3-2" name="video1_3" value="1">
+                        <label for="video1-3-2">1</label>
+                        <input type="radio" id="video1-3-3" name="video1_3" value="2">
+                        <label for="video1-3-3">2</label>
+                        <input type="radio" id="video1-3-4" name="video1_3" value="3">
+                        <label for="video1-3-4">3</label>
+                        <input type="radio" id="video1-3-5" name="video1_3" value="4">
+                        <label for="video1-3-5">4</label>
                     </div>
                 </div>
             </div>
         </div>
         
         <!-- Patient 2 -->
-        <div class="video-group">
-            <h2>Patient 2</h2>
+         <div class="video-group">
+            <h2>Posture UE: Arms Outstrechted</h2>
             <div class="video-group-row">
                 <div class="video-section">
-                    <img src="path/to/video2-1.gif" alt="Patient 2 Video 1" class="video-gif">
+                    <img src="Donna_Pour_FH.gif" alt="Patient 1 Video 1" class="video-gif">
                     <div class="rating-scale">
-                        <input type="radio" id="video2-1-1" name="video2_1" value="1">
-                        <label for="video2-1-1">1</label>
-                        <input type="radio" id="video2-1-2" name="video2_1" value="2">
-                        <label for="video2-1-2">2</label>
-                        <input type="radio" id="video2-1-3" name="video2_1" value="3">
-                        <label for="video2-1-3">3</label>
-                        <input type="radio" id="video2-1-4" name="video2_1" value="4">
-                        <label for="video2-1-4">4</label>
-                        <input type="radio" id="video2-1-5" name="video2_1" value="5">
-                        <label for="video2-1-5">5</label>
+                        <input type="radio" id="video1-1-1" name="video1_1" value="0">
+                        <label for="video1-1-1">0</label>
+                        <input type="radio" id="video1-1-2" name="video1_1" value="1">
+                        <label for="video1-1-2">1</label>
+                        <input type="radio" id="video1-1-3" name="video1_1" value="2">
+                        <label for="video1-1-3">2</label>
+                        <input type="radio" id="video1-1-4" name="video1_1" value="3">
+                        <label for="video1-1-4">3</label>
+                        <input type="radio" id="video1-1-5" name="video1_1" value="4">
+                        <label for="video1-1-5">4</label>
                     </div>
                 </div>
                 <div class="video-section">
-                    <img src="path/to/video2-2.gif" alt="Patient 2 Video 2" class="video-gif">
+                    <img src="Donna_Pour_FH.gif" alt="Patient 1 Video 2" class="video-gif">
                     <div class="rating-scale">
-                        <input type="radio" id="video2-2-1" name="video2_2" value="1">
-                        <label for="video2-2-1">1</label>
-                        <input type="radio" id="video2-2-2" name="video2_2" value="2">
-                        <label for="video2-2-2">2</label>
-                        <input type="radio" id="video2-2-3" name="video2_2" value="3">
-                        <label for="video2-2-3">3</label>
-                        <input type="radio" id="video2-2-4" name="video2_2" value="4">
-                        <label for="video2-2-4">4</label>
-                        <input type="radio" id="video2-2-5" name="video2_2" value="5">
-                        <label for="video2-2-5">5</label>
+                        <input type="radio" id="video1-2-1" name="video1_2" value="0">
+                        <label for="video1-2-1">0</label>
+                        <input type="radio" id="video1-2-2" name="video1_2" value="1">
+                        <label for="video1-2-2">1</label>
+                        <input type="radio" id="video1-2-3" name="video1_2" value="2">
+                        <label for="video1-2-3">2</label>
+                        <input type="radio" id="video1-2-4" name="video1_2" value="3">
+                        <label for="video1-2-4">3</label>
+                        <input type="radio" id="video1-2-5" name="video1_2" value="4">
+                        <label for="video1-2-5">4</label>
                     </div>
                 </div>
                 <div class="video-section">
-                    <img src="path/to/video2-3.gif" alt="Patient 2 Video 3" class="video-gif">
+                    <img src="Donna_Pour_FH.gif" alt="Patient 1 Video 3" class="video-gif">
                     <div class="rating-scale">
-                        <input type="radio" id="video2-3-1" name="video2_3" value="1">
-                        <label for="video2-3-1">1</label>
-                        <input type="radio" id="video2-3-2" name="video2_3" value="2">
-                        <label for="video2-3-2">2</label>
-                        <input type="radio" id="video2-3-3" name="video2_3" value="3">
-                        <label for="video2-3-3">3</label>
-                        <input type="radio" id="video2-3-4" name="video2_3" value="4">
-                        <label for="video2-3-4">4</label>
-                        <input type="radio" id="video2-3-5" name="video2_3" value="5">
-                        <label for="video2-3-5">5</label>
+                        <input type="radio" id="video1-3-1" name="video1_3" value="0">
+                        <label for="video1-3-1">0</label>
+                        <input type="radio" id="video1-3-2" name="video1_3" value="1">
+                        <label for="video1-3-2">1</label>
+                        <input type="radio" id="video1-3-3" name="video1_3" value="2">
+                        <label for="video1-3-3">2</label>
+                        <input type="radio" id="video1-3-4" name="video1_3" value="3">
+                        <label for="video1-3-4">3</label>
+                        <input type="radio" id="video1-3-5" name="video1_3" value="4">
+                        <label for="video1-3-5">4</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+              <!-- Patient 2 -->
+         <div class="video-group">
+            <h2>Intetion</h2>
+            <div class="video-group-row">
+                <div class="video-section">
+                    <img src="Donna_Pour_FH.gif" alt="Patient 1 Video 1" class="video-gif">
+                    <div class="rating-scale">
+                        <input type="radio" id="video1-1-1" name="video1_1" value="0">
+                        <label for="video1-1-1">0</label>
+                        <input type="radio" id="video1-1-2" name="video1_1" value="1">
+                        <label for="video1-1-2">1</label>
+                        <input type="radio" id="video1-1-3" name="video1_1" value="2">
+                        <label for="video1-1-3">2</label>
+                        <input type="radio" id="video1-1-4" name="video1_1" value="3">
+                        <label for="video1-1-4">3</label>
+                        <input type="radio" id="video1-1-5" name="video1_1" value="4">
+                        <label for="video1-1-5">4</label>
+                    </div>
+                </div>
+                <div class="video-section">
+                    <img src="Donna_Pour_FH.gif" alt="Patient 1 Video 2" class="video-gif">
+                    <div class="rating-scale">
+                        <input type="radio" id="video1-2-1" name="video1_2" value="0">
+                        <label for="video1-2-1">0</label>
+                        <input type="radio" id="video1-2-2" name="video1_2" value="1">
+                        <label for="video1-2-2">1</label>
+                        <input type="radio" id="video1-2-3" name="video1_2" value="2">
+                        <label for="video1-2-3">2</label>
+                        <input type="radio" id="video1-2-4" name="video1_2" value="3">
+                        <label for="video1-2-4">3</label>
+                        <input type="radio" id="video1-2-5" name="video1_2" value="4">
+                        <label for="video1-2-5">4</label>
+                    </div>
+                </div>
+                <div class="video-section">
+                    <img src="Donna_Pour_FH.gif" alt="Patient 1 Video 3" class="video-gif">
+                    <div class="rating-scale">
+                        <input type="radio" id="video1-3-1" name="video1_3" value="0">
+                        <label for="video1-3-1">0</label>
+                        <input type="radio" id="video1-3-2" name="video1_3" value="1">
+                        <label for="video1-3-2">1</label>
+                        <input type="radio" id="video1-3-3" name="video1_3" value="2">
+                        <label for="video1-3-3">2</label>
+                        <input type="radio" id="video1-3-4" name="video1_3" value="3">
+                        <label for="video1-3-4">3</label>
+                        <input type="radio" id="video1-3-5" name="video1_3" value="4">
+                        <label for="video1-3-5">4</label>
                     </div>
                 </div>
             </div>
