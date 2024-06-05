@@ -11,23 +11,9 @@ body {
     height: 100vh;
 }
 
-h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-}
-
-h2 {
-    font-size: 1.5em;
-    margin-bottom: 15px;
-}
-
-label {
-    font-size: 1em;
-}
-
-form {
+.container {
     background: #fff;
-    padding: 20px 30px;
+    padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 800px;
@@ -37,7 +23,28 @@ form {
 
 .logo {
     width: 150px;
-    margin-bottom: 20px;
+    margin: 0 auto;
+    display: block;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin: 20px 0;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin: 20px 0;
+}
+
+label {
+    font-size: 1em;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .video-group {
@@ -48,11 +55,13 @@ form {
     display: flex;
     justify-content: center;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
 .video-section {
     flex: 1;
     min-width: 150px;
+    max-width: 200px;
 }
 
 .video-gif {
@@ -107,6 +116,7 @@ input[type="text"] {
     cursor: pointer;
     font-size: 1em;
     transition: background 0.3s;
+    margin-top: 20px;
 }
 
 .submit-btn:hover {
