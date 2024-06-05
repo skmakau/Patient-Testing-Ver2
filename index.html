@@ -8,8 +8,35 @@
     <link href="https://fonts.googleapis.com/css2?family=Garamond&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="top-bar">
+        <a href="https://steadiwear.com/">
+            <img src="Logo.png" alt="Logo" class="logo" loading="lazy">
+        </a>
+        <div class="scale-menu">
+            <button>FTM Rating Sclaes</button>
+            <div class="legend" id="legend1">
+                <h3>Tremor Scale 1</h3>
+                <ul>
+                    <li>0 = Normal</li>
+                    <li>1 = Slight (amplitude <0.5 cm). May be intermittent.</li>
+                    <li>2 = Moderate amplitude (0.5-1 cm). May be intermittent.</li>
+                    <li>3 = Marked amplitude (1-2 cm).</li>
+                    <li>4 = Severe amplitude (>2 cm).</li>
+                </ul>
+            </div>
+            <div class="legend" id="legend2">
+                <h3>Pouring Sclae</h3>
+                <ul>
+                    <li>0 = Normal.</li>
+                    <li>1 = More careful than a person without tremor, but no water is spilled.</li>
+                    <li>2 = Spills a small amount of water (upto 10% of total amount).</li>
+                    <li>3 = Spills a considerable amount of water (>10 - 50%).</li>
+                    <li>4 = Unable to pour without spilling most of the water.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
     <div class="main-content">
-        <img src="Logo.png" alt="Logo" class="logo" loading="lazy">
         <h1>Steadi-Three Patient Evaluation: Donna</h1>
         <form id="surveyForm">
             <div>
@@ -176,34 +203,6 @@
 
         <button type="submit" class="submit-btn">Submit Ratings</button>
     </form>
-
-      <div class="sidebar">
-        <button onclick="toggleLegend('legend1')">Show/Hide FTM Tremor Scale</button>
-        <div class="legend" id="legend1">
-            <h3>FTM Tremor Scale</h3>
-            <ul>
-                <li>0 = Normal</li>
-                <li>1 = Slight (amplitude <0.5 cm). May be intermittent.</li>
-                <li>2 = Moderate amplitude (0.5-1 cm). May be intermittent.</li>
-                <li>3 = Marked amplitude (1-2 cm).</li>
-                <li>4 = Severe amplitude (>2 cm).</li>
-                <!-- Add more scale details as needed -->
-            </ul>
-        </div>
-        <button onclick="toggleLegend('legend2')">Show/Hide FTM Pouring Scale</button>
-        <div class="legend" id="legend2">
-            <h3>FTM Pouring Scale</h3>
-            <ul>
-                <li>0 = Normal.</li>
-                <li>1 = More careful than a person without tremor, but no water is spilled.</li>
-                <li>2 = Spills a small amount of water (upto 10% of total amount).</li>
-                <li>3 = Spills a considerable amount of water (>10 - 50%).</li>
-                <li>4 = Unable to pour without spilling most of the water.</li>
-                <!-- Add more scale details as needed -->
-            </ul>
-        </div>
-        <!-- Add more scales as needed -->
-    </div>
     <script src="script.js"></script>
 
 </body>
