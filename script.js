@@ -1,5 +1,20 @@
 document.getElementById('surveyForm').addEventListener('submit', function(event) {
     event.preventDefault();
+
+    // Check if all required fields are filled
+    const requiredFields = document.querySelectorAll('input[required]');
+    let allFieldsFilled = true;
+    requiredFields.forEach(field => {
+        if (!field.checked) {
+            allFieldsFilled = false;
+        }
+    });
+
+    if (!allFieldsFilled) {
+        alert('Please fill out all ratings before submitting.');
+        return;
+    }
+
     const formData = new FormData(this);
     const data = {};
     formData.forEach((value, key) => {
@@ -24,6 +39,4 @@ document.getElementById('surveyForm').addEventListener('submit', function(event)
         window.close();
     });
 });
-
-
 
