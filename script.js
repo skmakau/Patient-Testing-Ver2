@@ -1,3 +1,12 @@
+function toggleLegend() {
+    const legend = document.getElementById('legend');
+    if (legend.style.display === 'none' || legend.style.display === '') {
+        legend.style.display = 'block';
+    } else {
+        legend.style.display = 'none';
+    }
+}
+
 document.getElementById('surveyForm').addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -56,4 +65,5 @@ document.getElementById('surveyForm').addEventListener('submit', function(event)
         window.close();
     });
 });
+
 
