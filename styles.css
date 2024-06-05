@@ -11,7 +11,7 @@ body {
 /* Top Ribbon Styling */
 .top-bar {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
     padding: 10px 20px;
@@ -24,14 +24,14 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.top-bar .logo-container, .top-bar .scale-menu {
+.top-bar .logo-container {
     flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: left;
 }
 
 .top-bar .scale-menu {
+    flex: 1;
+    text-align: right;
     position: relative;
 }
 
@@ -67,11 +67,11 @@ body {
     align-items: center;
     width: 100%;
     max-width: 800px;
-    padding: 100px 20px 20px 20px;  /* Adjusted padding for top bar */
+    padding: 80px 20px 20px 20px;  /* Adjusted padding for top bar */
     background: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
+    margin: 20px auto;
     overflow-y: auto;
 }
 
