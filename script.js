@@ -1,11 +1,20 @@
 document.getElementById('surveyForm').addEventListener('submit', function(event) {
     event.preventDefault();
 
-    // Check if all required fields are filled
-    const requiredFields = document.querySelectorAll('input[required]');
+    // Validate the form manually to ensure all required fields are filled
+    const form = document.getElementById('surveyForm');
+    const requiredFields = form.querySelectorAll('input[required]');
     let allFieldsFilled = true;
+
     requiredFields.forEach(field => {
-        if (!field.checked) {
+        if (!field.checked && field.type === 'radio') {
+            const name = field.name;
+            const radioButtons = form.querySelectorAll(`input[name="${name}"]`);
+            const isChecked = Array.from(radioButtons).some(radio => radio.checked);
+            if (!isChecked) {
+                allFieldsFilled = false;
+            }
+        } else if (!field.value && field.type !== 'radio') {
             allFieldsFilled = false;
         }
     });
@@ -15,7 +24,7 @@ document.getElementById('surveyForm').addEventListener('submit', function(event)
         return;
     }
 
-    const formData = new FormData(this);
+    const formData = new FormData(form);
     const data = {};
     formData.forEach((value, key) => {
         data[key] = value;
