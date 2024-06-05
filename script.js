@@ -6,16 +6,24 @@ document.getElementById('surveyForm').addEventListener('submit', function(event)
     const requiredFields = form.querySelectorAll('input[required]');
     let allFieldsFilled = true;
 
-    requiredFields.forEach(field => {
-        if (!field.checked && field.type === 'radio') {
-            const name = field.name;
-            const radioButtons = form.querySelectorAll(`input[name="${name}"]`);
-            const isChecked = Array.from(radioButtons).some(radio => radio.checked);
-            if (!isChecked) {
-                allFieldsFilled = false;
-            }
-        } else if (!field.value && field.type !== 'radio') {
+    // Check each group of radio buttons
+    const radioGroups = [...new Set([...form.querySelectorAll('input[type="radio"]')].map(radio => radio.name))];
+
+    radioGroups.forEach(group => {
+        const radioButtons = form.querySelectorAll(`input[name="${group}"]`);
+        const isChecked = Array.from(radioButtons).some(radio => radio.checked);
+        if (!isChecked) {
             allFieldsFilled = false;
+            // Set focus on the first radio button of the group
+            form.querySelector(`input[name="${group}"]`).focus();
+        }
+    });
+
+    // Check other required fields
+    requiredFields.forEach(field => {
+        if (!field.value) {
+            allFieldsFilled = false;
+            field.focus();
         }
     });
 
