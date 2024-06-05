@@ -9,7 +9,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 .container {
@@ -128,6 +128,15 @@ input[type="text"] {
 }
 
 /* Legend Styling */
+.legend-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 20px;
+    width: 300px;
+    max-width: 100%;
+}
+
 .legend {
     display: none;
     margin-top: 20px;
@@ -135,8 +144,8 @@ input[type="text"] {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    max-width: 800px;
     width: 100%;
+    max-width: 100%;
 }
 
 .legend h3 {
@@ -151,4 +160,33 @@ input[type="text"] {
 
 .legend ul li {
     margin-bottom: 10px;
+}
+
+/* Additional Color Scheme */
+.container,
+.legend {
+    background: #ffffff;
+}
+
+body {
+    background: #f0f4f8;
+}
+
+button {
+    background: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+button:active {
+    background: #004085;
 }
