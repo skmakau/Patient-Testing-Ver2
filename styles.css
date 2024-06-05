@@ -6,6 +6,9 @@ body {
     margin: 0;
     padding: 0;
     overflow-y: auto;  /* Enable vertical scrolling */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Top Ribbon Styling */
@@ -26,12 +29,19 @@ body {
 
 .top-bar .logo-container {
     flex: 1;
-    text-align: left;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.top-bar .logo-container img {
+    height: 50px;
+    margin-left: 10px;
 }
 
 .top-bar .scale-menu {
     flex: 1;
-    text-align: right;
+    display: flex;
+    justify-content: flex-end;
     position: relative;
 }
 
@@ -67,11 +77,11 @@ body {
     align-items: center;
     width: 100%;
     max-width: 800px;
-    padding: 80px 20px 20px 20px;  /* Adjusted padding for top bar */
+    padding: 100px 20px 20px 20px;  /* Adjusted padding for top bar */
     background: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 20px auto;
+    margin-top: 20px;
     overflow-y: auto;
 }
 
