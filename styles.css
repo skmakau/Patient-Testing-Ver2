@@ -10,15 +10,13 @@ body {
     align-items: flex-start;
     height: 100vh;
     flex-direction: row;
-    overflow: hidden;
 }
 
 .main-content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
-    max-width: 800px;
+    width: 70%;  /* Adjusted to leave space for sidebar */
     padding: 20px;
     background: #fff;
     border-radius: 10px;
@@ -135,6 +133,7 @@ input[type="text"] {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    width: 25%;  /* Adjusted to fit the main content */
     margin-left: 20px;
     padding: 20px;
     background: #fff;
