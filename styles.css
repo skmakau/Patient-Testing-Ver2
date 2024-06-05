@@ -27,21 +27,25 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.top-bar .logo-container {
+.logo-container {
     display: flex;
-    justify-content: center;
     align-items: center;
-    margin-right: 20px;
+    margin-right: auto;
 }
 
-.logo-text {
-    display: flex;
-    align-items: center;
+.logo-button {
+    display: inline-block;
+    background: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 10px;
     text-decoration: none;
+    position: relative;
+    overflow: hidden;
 }
 
 .logo-steadi {
-    color: #ffffff;
+    color: #fff;
     font-size: 1.5em;
     margin-right: 5px;
 }
@@ -49,6 +53,21 @@ body {
 .logo-wear {
     color: #4caf50;
     font-size: 1.5em;
+}
+
+.hover-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.3s;
+    white-space: nowrap;
+}
+
+.logo-button:hover .hover-text {
+    opacity: 1;
 }
 
 .scale-menu {
