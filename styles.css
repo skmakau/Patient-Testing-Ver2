@@ -59,13 +59,16 @@ body {
 
 .hover-text {
     position: absolute;
-    top: 50%;
+    top: 100%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
     color: #fff;
     opacity: 0;
     transition: opacity 0.3s;
     white-space: nowrap;
+    background-color: #333;
+    padding: 5px;
+    border-radius: 5px;
 }
 
 .logo-button:hover .hover-text {
