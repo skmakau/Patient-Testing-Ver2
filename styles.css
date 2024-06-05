@@ -5,20 +5,66 @@ body {
     color: #333;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    height: 100vh;
-    flex-direction: row;
     overflow-y: auto;  /* Enable vertical scrolling */
+}
+
+/* Top Ribbon Styling */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 20px;
+    background: #007bff;
+    color: #ffffff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.top-bar img {
+    width: 150px;
+}
+
+.scale-menu {
+    position: relative;
+}
+
+.scale-menu button {
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 1em;
+    padding: 10px 20px;
+}
+
+.scale-menu .legend {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: #ffffff;
+    color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.scale-menu:hover .legend {
+    display: block;
 }
 
 .main-content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 70%;
-    padding: 20px;
+    width: 100%;
+    max-width: 800px;
+    padding: 80px 20px 20px 20px;  /* Adjusted padding for top bar */
     background: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -127,44 +173,6 @@ input[type="text"] {
 
 .submit-btn:active {
     background: #3e8e41;
-}
-
-/* Sidebar Styling */
-.sidebar {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 25%;
-    padding: 20px;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 20px;
-}
-
-.sidebar h3 {
-    margin-top: 0;
-    color: #4caf50;
-}
-
-.legend {
-    display: none;
-    margin-top: 20px;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 100%;
-}
-
-.legend ul {
-    list-style: none;
-    padding: 0;
-}
-
-.legend ul li {
-    margin-bottom: 10px;
 }
 
 /* Additional Color Scheme */
