@@ -1,5 +1,5 @@
-function toggleLegend() {
-    const legend = document.getElementById('legend');
+function toggleLegend(legendId) {
+    const legend = document.getElementById(legendId);
     if (legend.style.display === 'none' || legend.style.display === '') {
         legend.style.display = 'block';
     } else {
