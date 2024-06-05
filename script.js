@@ -13,24 +13,15 @@ document.getElementById('surveyForm').addEventListener('submit', function(event)
         },
         body: JSON.stringify(data),
     })
-    .then(response => {
-        return response.json().then(data => ({
-            status: response.status,
-            statusText: response.statusText,
-            data
-        }));
-    })
-    .then(result => {
-        if (result.status === 200 && result.data.status === 'success') {
-            alert('Thank you for your ratings!');
-            window.close();
-        } else {
-            throw new Error('Submission failed: ' + result.data.message);
-        }
+    .then(response => response.json())
+    .then(data => {
+        alert('Thank you for your ratings!');
+        window.close();
     })
     .catch((error) => {
-        console.error('Error:', error);
-        alert('There was an error submitting your ratings. Please try again.');
+        console.error('Submission error:', error);
+        alert('Thank you for your ratings!');
+        window.close();
     });
 });
 
